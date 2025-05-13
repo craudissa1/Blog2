@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayFocus Blog - Maximize sua Produtividade e Estudos</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Cores personalizadas do StayFocus */
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .accent-color {
+            color: var(--accent);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding-bottom: 2px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .featured-post {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold text-gray-800">
+                    <span class="text-blue-600">Stay</span><span class="text-purple-600">Focus</span>
+                </h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link font-medium text-gray-800 hover:text-blue-600">Início</a>
+                <a href="#" class="nav-link font-medium text-gray-800 hover:text-blue-600">Funcionalidades</a>
+                <a href="#" class="nav-link font-medium text-gray-800 hover:text-blue-600">Concursos</a>
+                <a href="#" class="nav-link font-medium text-gray-800 hover:text-blue-600">Produtividade</a>
+                <a href="#" class="nav-link font-medium text-gray-800 hover:text-blue-600">Sobre</a>
+            </nav>
+            
+            <div class="flex items-center">
+                <button class="btn-primary rounded-full px-6 py-2 font-medium text-sm">Começar Agora</button>
+                <button class="md:hidden ml-4">
+                    <i class="fas fa-bars text-gray-800 text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-50 to-purple-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 leading-tight">
+                        Transforme seu <span class="text-blue-600">tempo</span> em <span class="text-purple-600">resultados</span>
+                    </h1>
+                    <p class="text-xl text-gray-700 mb-8">
+                        StayFocus é uma plataforma completa que reúne as melhores técnicas e ferramentas de produtividade, gestão de tempo e estudos em uma interface intuitiva e personalizada.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="btn-primary rounded-full px-8 py-3 font-medium">Experimente Grátis</button>
+                        <button class="bg-white text-gray-800 rounded-full px-8 py-3 font-medium border border-gray-300 hover:border-gray-400 transition">Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="/api/placeholder/600/400" alt="StayFocus Dashboard" class="rounded-lg shadow-xl" />
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Posts Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Blog StayFocus</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Artigos, dicas e recursos para maximizar sua produtividade, melhorar seus estudos e alcançar seus objetivos.
+                </p>
+            </div>
+            
+            <!-- Featured Post -->
+            <div class="featured-post rounded-xl p-6 mb-12">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-2/3 pr-0 md:pr-8">
+                        <div class="mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Destaque</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2">Concursos</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Como o StayFocus Revoluciona sua Preparação para Concursos</h3>
+                        <p class="text-gray-700 mb-4">
+                            Descubra como o módulo de concursos do StayFocus pode transformar sua experiência de preparação, com gerenciamento completo de editais, banco de questões inteligente e simulados personalizados.
+                        </p>
+                        <div class="flex items-center mb-4">
+                            <img src="/api/placeholder/40/40" alt="Autor" class="rounded-full mr-3" />
+                            <div>
+                                <p class="font-medium">Laura Silva</p>
+                                <p class="text-gray-500 text-sm">8 de maio de 2025 • 8 min de leitura</p>
+                            </div>
+                        </div>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Ler artigo completo →</a>
+                    </div>
+                    <div class="md:w-1/3 mt-6 md:mt-0">
+                        <img src="/api/placeholder/400/300" alt="Preparação para Concursos" class="rounded-lg w-full h-auto shadow" />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="card bg-white rounded-xl overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/220" alt="StayFocus Dashboard" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="mb-3">
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Produtividade</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Hiperfoco: A Técnica de Produtividade Potencializada pelo StayFocus</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Aprenda a utilizar a técnica de hiperfoco para transformar seus interesses em projetos estruturados e maximizar sua produtividade.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="/api/placeholder/32/32" alt="Autor" class="rounded-full mr-3 w-8 h-8" />
+                                <p class="text-gray-500 text-sm">Carlos Mendes</p>
+                            </div>
+                            <p class="text-gray-500 text-sm">6 min</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="card bg-white rounded-xl overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/220" alt="StayFocus Features" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Funcionalidades</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Mergulhe nas Funcionalidades que Tornam o StayFocus seu Aliado na Produtividade</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Um tour completo pelas ferramentas e recursos que fazem do StayFocus a plataforma definitiva para maximizar sua produtividade.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="/api/placeholder/32/32" alt="Autor" class="rounded-full mr-3 w-8 h-8" />
+                                <p class="text-gray-500 text-sm">Ana Costa</p>
+                            </div>
+                            <p class="text-gray-500 text-sm">9 min</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="card bg-white rounded-xl overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/220" alt="StayFocus Dashboard" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="mb-3">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Estudos</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Como Otimizar seu Tempo de Estudo com o Método Pomodoro Integrado</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Descubra como o temporizador Pomodoro personalizado do StayFocus pode revolucionar suas sessões de estudo e aumentar sua retenção.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="/api/placeholder/32/32" alt="Autor" class="rounded-full mr-3 w-8 h-8" />
+                                <p class="text-gray-500 text-sm">Rafael Oliveira</p>
+                            </div>
+                            <p class="text-gray-500 text-sm">7 min</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition duration-300">Ver Todos os Artigos</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Destaques de Funcionalidades -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Funcionalidades Principais</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Conheça os módulos que fazem do StayFocus a plataforma definitiva para produtividade e estudos.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Funcionalidade 1 -->
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300">
+                    <div class="bg-blue-100 text-blue-600 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dashboard Inteligente</h3>
+                    <p class="text-gray-600">
+                        Visualize e gerencie seu dia através de blocos de tempo intuitivos, lista de prioridades e lembretes estratégicos.
+                    </p>
+                    <a href="#" class="block mt-4 text-blue-600 font-medium hover:underline">Saiba mais →</a>
+                </div>
+                
+                <!-- Funcionalidade 2 -->
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300">
+                    <div class="bg-purple-100 text-purple-600 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-book text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Módulo de Concursos</h3>
+                    <p class="text-gray-600">
+                        Gerencie editais, crie bancos de questões inteligentes e realize simulados personalizados para maximizar seu desempenho.
+                    </p>
+                    <a href="#" class="block mt-4 text-blue-600 font-medium hover:underline">Saiba mais →</a>
+                </div>
+                
+                <!-- Funcionalidade 3 -->
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300">
+                    <div class="bg-green-100 text-green-600 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-bullseye text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hiperfocos</h3>
+                    <p class="text-gray-600">
+                        Transforme interesses em projetos estruturados e mantenha o foco intenso com nosso sistema de alternância de contexto.
+                    </p>
+                    <a href="#" class="block mt-4 text-blue-600 font-medium hover:underline">Saiba mais →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Fique por dentro das novidades</h2>
+            <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                Assine nossa newsletter e receba dicas exclusivas de produtividade, atualizações do StayFocus e conteúdos especiais.
+            </p>
+            <div class="flex flex-col sm:flex-row max-w-lg mx-auto">
+                <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-4 py-3 rounded-l-lg sm:rounded-r-none mb-2 sm:mb-0 text-gray-900 focus:outline-none" />
+                <button class="bg-white text-blue-600 font-medium px-6 py-3 rounded-r-lg sm:rounded-l-none hover:bg-gray-100 transition">Assinar</button>
+            </div>
+            <p class="text-sm opacity-75 mt-4">
+                Prometemos não enviar spam. Você pode cancelar a inscrição a qualquer momento.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Logo e Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4"><span class="text-blue-400">Stay</span><span class="text-purple-400">Focus</span></h3>
+                    <p class="text-gray-400 mb-4">
+                        Transformando tempo em resultados com a plataforma definitiva de produtividade e estudos.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links Rápidos -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Início</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Funcionalidades</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Preços</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categorias do Blog -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Categorias do Blog</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Produtividade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Concursos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Estudos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Hiperfocos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Saúde & Bem-estar</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contato -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <a href="mailto:contato@stayfocus.com" class="text-gray-400 hover:text-white transition">contato@stayfocus.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-gray-400"></i>
+                            <a href="tel:+5511999999999" class="text-gray-400 hover:text-white transition">(11) 99999-9999</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 StayFocus. Todos os direitos reservados.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm mr-4">Termos de Uso</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript simples para tornar o menu mobile funcional
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.fa-bars').parentElement;
+            const nav = document.querySelector('nav');
+            
+            menuButton.addEventListener('click', function() {
+                if (nav.classList.contains('hidden')) {
+                    nav.classList.remove('hidden');
+                    nav.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'shadow-md', 'py-4', 'space-y-4', 'px-4');
+                } else {
+                    nav.classList.add('hidden');
+                    nav.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'shadow-md', 'py-4', 'space-y-4', 'px-4');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
