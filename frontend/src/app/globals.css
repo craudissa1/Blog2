@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #10b981;
+  --accent: #8b5cf6;
+  --dark: #1f2937;
+  --light: #f9fafb;
+  --gray: #6b7280;
+
+  /* Cores para o modo escuro, se necessário no futuro */
+  --background-dark: #1f2937; /* Exemplo: usando a cor 'dark' como fundo */
+  --foreground-dark: #f9fafb; /* Exemplo: usando a cor 'light' como texto */
+}
+
+body {
+  font-family: var(--font-inter), sans-serif; /* Garante que Inter seja a fonte padrão */
+  background-color: var(--light);
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos para modo escuro (opcional, se for implementar) */
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-dark);
+    color: var(--foreground-dark);
+  }
+} */
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.5rem; /* Ajuste de padding para consistência */
+  border-radius: 9999px; /* rounded-full */
+  font-weight: 500; /* medium */
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.accent-color {
+  color: var(--accent);
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  font-weight: 500; /* medium */
+  color: var(--dark); /* Cor base dos links de navegação */
+}
+
+.nav-link:hover {
+  color: var(--primary); /* Cor ao passar o mouse */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white; /* Cor de fundo padrão para cards */
+  border-radius: 0.75rem; /* rounded-xl */
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg (aproximado do protótipo) */
+}
+
+.featured-post {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1.5rem; /* p-6 */
+}
+
+/* Utilitário para line-clamp (se não estiver usando plugin Tailwind para isso) */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
